@@ -16,11 +16,11 @@ function App() {
       <CrudAppStore>
 
         <Navbar bg='light'>
-          <Navbar.Brand href='/list'>Crud</Navbar.Brand>
+          <Navbar.Brand>Crud</Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/list">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>            
+            <Nav.Link><Link to='/list'>Home</Link></Nav.Link>
+            <Nav.Link><Link to='/about'>About</Link></Nav.Link>            
           </Nav>
           </Navbar.Collapse>
 

@@ -2,13 +2,13 @@ import {CrudAppContext} from '../store/crudAppStore';
 import {Row,Col,Button} from 'react-bootstrap';
 import { Checkbox } from 'antd';
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from "react-router-dom";
+import {useHistory, Link } from "react-router-dom";
 
 
 
 const ItemTable = (props) =>{
     const {itemList,removeItem} = useContext(CrudAppContext);
-
+    let history = useHistory();
     let selected =[];
 
     useEffect(() =>{
@@ -22,6 +22,8 @@ const ItemTable = (props) =>{
             });
         }
     }
+
+    
 
     const renderTableRows =() =>{
         
@@ -37,7 +39,7 @@ const ItemTable = (props) =>{
                         console.log('else')
                         selected = selected.filter(item => item !== id);
                     }
-                };
+                };                
                 return <tr>
                     <td>
                         <Checkbox onChange={checkBoxChange}></Checkbox>
